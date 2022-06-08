@@ -5,7 +5,7 @@ from .serializers import ItemSerializer
 from rest_framework import serializers
 from rest_framework import status
 from django.shortcuts import get_object_or_404
-#django rest api
+
 @api_view(['GET'])
 def ApiOverview(request):
 	api_urls = {
