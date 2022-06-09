@@ -2,9 +2,19 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import Item
 from .serializers import ItemSerializer
-from rest_framework import serializers
+from rest_framework import serializers, generics
 from rest_framework import status
 from django.shortcuts import get_object_or_404
+
+
+
+class API_objects(generics.ListCreateAPIView):
+    queryset = Item.objects.all()
+    serializer_class = ItemSerializer
+
+class API_objects_details(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Item.objects.all()
+    serializer_class = ItemSerializer
 
 @api_view(['GET'])
 def ApiOverview(request):

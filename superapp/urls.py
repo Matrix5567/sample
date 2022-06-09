@@ -10,4 +10,6 @@ urlpatterns = [
 	path('update/<int:pk>/', views.update_items, name='update-items'),
 	path('item/<int:pk>/delete/', views.delete_items, name='delete-items'),
 	path('api-token-auth/', obtain_auth_token, name='api_token_auth'),
+	path('basic/', views.API_objects.as_view()),
+    path('basic/<int:pk>/', views.API_objects_details.as_view()),
 ]
