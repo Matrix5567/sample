@@ -10,7 +10,7 @@ from django.shortcuts import get_object_or_404
 
 class API_objects(generics.ListCreateAPIView):
     queryset = Item.objects.all()
-    serializer_class = ItemSerializer
+    serializer_class = ItemSerializer                               #basicview
 
 class API_objects_details(generics.RetrieveUpdateDestroyAPIView):
     queryset = Item.objects.all()
